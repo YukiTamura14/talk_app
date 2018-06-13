@@ -1,0 +1,13 @@
+<h3>以下の内容で投稿する</h3>
+
+<%= form_with(model: @happy_talk, url: happy_talks_path, local: true) do |form| %>
+  <%= form.hidden_field :happy_talk %>
+
+  <p>happy talk:<%= @happy_talk.content %></p>
+  <%=form.submit "シェアする！" %>
+<% end %>
+
+<%= form_with(model: @happy_talk, url: happy_talks_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :happy_talk %>
+  <%= form.submit '戻る', name: 'back'%>
+<% end %>

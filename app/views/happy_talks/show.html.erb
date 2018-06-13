@@ -1,0 +1,7 @@
+<h1>happy talk詳細画面</h1>
+<p>content: <%= @happy_talk.content %></p>
+
+<%= form_with(model: @happy_talk, url: root_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :content %>
+  <%= form.submit "戻る", name: 'back' %>
+<% end %>

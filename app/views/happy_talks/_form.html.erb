@@ -1,0 +1,21 @@
+<%= form_with (model: @happy_talk, local: true, url: choose_new_or_edit) do |form| %>
+<% if @happy_talk.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @happy_talk.errors.count %>件のエラーがあります。</h2>
+    <ul>
+
+      <% @happy_talk.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+    <div class="happy_talk_content">
+      <%= form.label :happy_talk! %>
+      <%= form.text_field :happy_talk %>
+    </div>
+    <%= form.submit %>
+  <% end %>
+
+  <%= link_to "happy talk一覧画面にもどる", blogs_path %>

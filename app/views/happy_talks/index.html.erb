@@ -1,0 +1,28 @@
+<h1>happy talk一覧</h1>
+
+<p><%= notice %></p>
+
+<table>
+  <tr>
+    <th>happy_talk</th>
+  </tr>
+
+  <% @happy_talk.each do |blog| %>
+    <tr>
+      <td><%= happy_talk.content %></td>
+    </tr>
+
+  <% @happy_talk.each do |happy_talk| %>
+    <tr>
+      <td><%= happy_talk.content %></td>
+      <td><%= link_to '詳細を確認する', happy_talk_path(happy_talk.id) %></td>
+      <td><%= link_to 'happy talkを編集する', edit_happy_talk(happy_talk.id) %></td>
+      <td><%= link_to 'happy talkを削除する', happy_talk_path(happy_talk.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br>
+
+<%= link_to 'TOP画面に戻る', root_path %>
+<%= link_to '新しいhappy talkを投稿する', new_happy_talk_path %>
