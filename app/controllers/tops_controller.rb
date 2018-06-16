@@ -1,4 +1,3 @@
 class TopsController < ApplicationController
-  def index
-  end
+ root 'tops#index'
 end
