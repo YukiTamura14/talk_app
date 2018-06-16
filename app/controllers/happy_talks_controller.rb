@@ -3,7 +3,7 @@ class HappyTalksController < ApplicationController
   before_action :set_happy_talk, only: [:show, :edit, :update, :destroy]
 
   def index
-    @happy_talks = HappyTalk.all
+    @happy_talks = HappyTalk.all.order("id DESC")
   end
 
   def new
@@ -54,6 +54,6 @@ class HappyTalksController < ApplicationController
   end
 
   def set_happy_talk
-    @happy_talk = HappyTalk.find (params[:id])
+    @happy_talk = HappyTalk.find(params[:id])
   end
 end

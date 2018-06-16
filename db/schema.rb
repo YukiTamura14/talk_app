@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 2018_06_09_094835) do
 
   create_table "happy_talks", force: :cascade do |t|
     t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
