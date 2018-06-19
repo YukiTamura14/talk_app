@@ -1,14 +1,27 @@
   <header>
-    <nav>
-      <ul>
-        <li><a href="happy_talks">Happy Talk</a></li>
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Mail</a></li>
-      </ul>
+    <nav class = "navbar navbar-default">
+      <div class = "container-fluid">
+        <div class = "navbar header">
+          <button type = "button" class = "navbar-toggle collapsed" data-toggle = "collapse" data-target = "#gnavi">
+            <span class = "sr-only">HappyTalk</span>
+            <span class = "icon-bar"></span>
+            <span class = "icon-bar"></span>
+            <span class = "icon-bar"></span>
+          </button>
+          <a class = "navbar-brand" href = "#">Happy Talk</a>
+        </div>
+          <div id = "gnavi" class = "collapse navbar-collapse">
+            <ul class = "nav navbar-nav">
+              <li><%= link_to "Happy Talk",new_happy_talk_path %></li>
+              <li><%= link_to "Login" %></li>
+              <li><%= link_to "Mail" %></li>
+            </ul>
+          </div>
+        </div>
     </nav>
   </header>
   <section class="main-header">
-    <img src="/happytalk.jpg">
+    <%= image_tag 'happytalk.png', :size =>'967x625' %>
   </section>
   <section class="about">
     <h1>About Happy Talk</h1>
@@ -24,23 +37,26 @@
     <h1>Function</h1>
     <div class="function-images">
       <div class="function-image">
-        <img src="key.png">
-        <p>ログイン機能</p>
+        <a href = "#"><%= image_tag 'key.png'%></a>
+        <p>ログイン</p>
       </div>
       <div class="function-image">
-        <a href="#"><img src="mails.png" alt="メール送信"></a>
+        <a href="#"><%= image_tag 'mails.png'%></a>
+        <p>メール</p>
+
       </div>
       <div class="function-image">
-        <a href="#"><img src="girls.png" alt="友達つながり機能"></a>
+        <a href="#"><%= image_tag 'girls.png'%></a>
+        <p>Sing up</p>
       </div>
       <div class="function-image">
-        <a href="/happy_talks"><img src="comment.png" alt="投稿する"></a>
+        <a href="/happy_talks"><%= image_tag 'comment.png'%></a>
+        <p>投稿する</p>
       </div>
     </div>
   </section>
   <footer>
-    <p>Happy Talk</p>
-    <p>since 1985</p>
+    <p>Happy Talk since 1985</p>
   </footer>
 </body>
 </html>
