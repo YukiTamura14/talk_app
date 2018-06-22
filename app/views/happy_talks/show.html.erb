@@ -1,7 +1,7 @@
-<h1>happy talk詳細画面</h1>
+<h2>Content</h2>
 <p>content: <%= @happy_talk.content %></p>
 
-<%= form_with(model: @happy_talk, url: root_path, local: true, method: 'get') do |form| %>
+<%= form_with(model: @happy_talk, url: happy_talks_path, local: true, method: 'get') do |form| %>
   <%= form.hidden_field :content %>
-  <%= form.submit "戻る", name: 'back' %>
+  <%= form.submit "Back", class: "btn btn-default"%>
 <% end %>
