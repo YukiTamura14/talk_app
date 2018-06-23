@@ -1,28 +1,21 @@
-<h1>happy talk一覧</h1>
+<h2>Happy Talk Lists</h2>
 
 <p><%= notice %></p>
 
-<table>
-  <tr>
-    <th>happy_talk</th>
-  </tr>
+<div id="new-happy-talk-link">
+  <%= link_to 'Make your happy', new_happy_talk_path, class: "btn btn-default"  %><br>
+  <%= link_to 'HOME', root_path, class: "btn btn-default" %>
+</div>
 
-  <% @happy_talk.each do |blog| %>
-    <tr>
-      <td><%= happy_talk.content %></td>
-    </tr>
-
-  <% @happy_talk.each do |happy_talk| %>
-    <tr>
-      <td><%= happy_talk.content %></td>
-      <td><%= link_to '詳細を確認する', happy_talk_path(happy_talk.id) %></td>
-      <td><%= link_to 'happy talkを編集する', edit_happy_talk(happy_talk.id) %></td>
-      <td><%= link_to 'happy talkを削除する', happy_talk_path(happy_talk.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %></td>
-    </tr>
-  <% end %>
-</table>
-
-<br>
-
-<%= link_to 'TOP画面に戻る', root_path %>
-<%= link_to '新しいhappy talkを投稿する', new_happy_talk_path %>
+<% @happy_talks.each do |happy_talk| %>
+<div class="row">
+  <div class="col-xs-6 col-xs-push-3 happy-talk-panel" >
+    <p class= "balloon4 line_break"><%= happy_talk.content %></p>
+    <div class="happy-talk-links">
+      <%= link_to 'Verify the contents', happy_talk_path(happy_talk.id), class: "btn btn-default" %>
+      <%= link_to 'Edit happy talk', edit_happy_talk_path(happy_talk.id), class: "btn btn-default" %>
+      <%= link_to 'Delete happy talk', happy_talk_path(happy_talk.id), method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-default" %>
+    </div>
+  </div>
+</div>
+<% end %>

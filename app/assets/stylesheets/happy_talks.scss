@@ -1,3 +1,60 @@
-// Place all the styles related to the happy_talks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// // Place all the styles related to the happy_talks controller here.
+// // They will automatically be included in application.css.
+// // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  font-family: verdana, arial, helvetica, sans-serif;
+  line-height: 18px;
+}
+
+div.happy-talk-panel {
+  height: 200px;
+}
+
+div.happy-talk-panel {
+  height: 200px;
+  margin: 20px 0;
+  padding: 10px;
+}
+
+h2{
+  font-family: times;
+}
+
+.balloon4 {
+    position: relative;
+    margin: 2em 0 2em 40px;
+    padding: 15px;
+    background: #fff0c6;
+    border-radius: 30px;
+}
+
+.balloon4:before{
+    content: "";
+    position: absolute;
+    left: -38px;
+    width: 13px;
+    height: 12px;
+    bottom: 0;
+    background: #fff0c6;
+    border-radius: 50%;
+}
+
+.balloon4:after{
+    content: "";
+    position: absolute;
+    left: -24px;
+    width: 20px;
+    min-height: 18px;
+    bottom: 3px;
+    background: #fff0c6;
+    border-radius: 50%;
+}
+.balloon4 p {
+    margin: 0;
+    padding: 0;
+}
+
+.line_break{
+  word-wrap: break-word;
+}

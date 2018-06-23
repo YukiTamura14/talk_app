@@ -1,9 +1,8 @@
-<%= form_with (model: @happy_talk, local: true, url: choose_new_or_edit) do |form| %>
+<%= form_with(model: @happy_talk, local: true, url: choose_new_or_edit) do |form| %>
 <% if @happy_talk.errors.any? %>
   <div id="error_explanation">
     <h2><%= @happy_talk.errors.count %>件のエラーがあります。</h2>
     <ul>
-
       <% @happy_talk.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
@@ -11,11 +10,15 @@
   </div>
 <% end %>
 
-    <div class="happy_talk_content">
-      <%= form.label :happy_talk! %>
-      <%= form.text_field :happy_talk %>
+<div class="happy_talk_content form-group has-success">
+  <div class="row">
+    <div class= "col-xs-6 col-xs-push-3">
+      <%= form.label :content, class: "control-label" %>
+      <%= form.text_field :content, class: "form-control" %>
+     <p class="help-block">※140文字以内で入力してください。</p>
     </div>
-    <%= form.submit %>
-  <% end %>
-
-  <%= link_to "happy talk一覧画面にもどる", blogs_path %>
+  </div>
+</div>
+<%= form.submit "Share your Happy", class: "btn btn-default" %>
+<% end %>
+<%= link_to "Happy Talk Lists", happy_talks_path, class: "btn btn-default" %>
