@@ -1,3 +1,7 @@
+.navbar{
+  float:left;
+}
+
 .navbar-default{
   background-color: white;
   border-color: transparent;
