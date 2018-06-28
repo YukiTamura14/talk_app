@@ -10,3 +10,24 @@
 .panel-danger{
   border-color: transparent;
 }
+
+.fa-envelope:before{
+  background-image: linear-gradient(#05FBFF, #1E00FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  vertical-align: middle;
+}
+
+.fa-sign-in-alt:before {
+  background-image: linear-gradient(#05FBFF, #1E00FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  vertical-align: middle;
+}
+
+.fa-address-book:before{
+  background-image: linear-gradient(#05FBFF, #1E00FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  vertical-align: middle;
+}

@@ -1,6 +1,7 @@
 class HappyTalksController < ApplicationController
 
   before_action :set_happy_talk, only: [:show, :edit, :update, :destroy]
+  before_action :require_login, only: [:new, :edit, :show, :destroy]
 
   def index
     @happy_talks = HappyTalk.all.order("id DESC")
@@ -47,8 +48,14 @@ class HappyTalksController < ApplicationController
     render :new if @happy_talk.invalid?
   end
 
-  private
+  def require_login
+    unless logged_in?
+      flash[:error] = "You must be logged in"
+      redirect_to new_user_path
+    end
+  end
 
+  private
   def happy_talk_params
     params.require(:happy_talk).permit(:content)
   end

@@ -1,0 +1,14 @@
+<% flash.each do |key, value| %>
+  <%= content_tag(:div, value, class: "#{key}") %>
+<% end %>
+<h1><%= @user.name %>の登録メールアドレス</h1>
+
+<p><%= @user.email %></p>
+
+<% if logged_in? %>
+  <%= link_to "Go to Happy Talk", happy_talks_path, class: "btn btn-default" %>
+  <%= link_to "Logout", session_path(current_user.id), method: :delete, class: "btn btn-default" %>
+<% else %>
+  <%= link_to "Sign up", new_user_path, class: "btn btn-default" %>
+  <%= link_to "Login", new_session_path, class: "btn btn-default" %>
+<% end %>
