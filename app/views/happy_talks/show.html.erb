@@ -1,6 +1,14 @@
 <h2>Content</h2>
 <p>content: <%= @happy_talk.content %></p>
 
+<% unless @happy_talk.user == current_user %>
+  <% if @favorite.present? %>
+    <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id, happy_talk_id: @happy_talk.id), method: :delete, class: 'btn btn-danger' %>
+  <% else %>
+    <%= link_to 'お気に入りする', favorites_path(happy_talk_id: @happy_talk.id), method: :post, class: 'btn btn-primary' %>
+  <% end %>
+<% end %>
+
 <%= form_with(model: @happy_talk, url: happy_talks_path, local: true, method: 'get') do |form| %>
   <%= form.hidden_field :content %>
   <%= form.submit "Back", class: "btn btn-default"%>

@@ -17,6 +17,8 @@ class HappyTalksController < ApplicationController
 
   def create
     @happy_talk = HappyTalk.new(happy_talk_params)
+    @happy_talk.user_id = current_user.id
+    # @happy_talk = current_user.happy_talks.build(happy_talk_params)
     if @happy_talk.save
       redirect_to new_happy_talk_path, notice: "happy talkを作成しました"
     else
@@ -28,6 +30,7 @@ class HappyTalksController < ApplicationController
   end
 
   def show
+    @favorite = current_user.favorites.find_by(happy_talk_id: @happy_talk.id)
   end
 
   def update
@@ -45,14 +48,9 @@ class HappyTalksController < ApplicationController
 
   def confirm
     @happy_talk = HappyTalk.new(happy_talk_params)
+    @happy_talk.user_id = current_user.id
+    # @happy_talk = current_user.happy_talks.build(happy_talk_params)
     render :new if @happy_talk.invalid?
-  end
-
-  def require_login
-    unless logged_in?
-      flash[:error] = "You must be logged in"
-      redirect_to new_user_path
-    end
   end
 
   private
@@ -62,5 +60,12 @@ class HappyTalksController < ApplicationController
 
   def set_happy_talk
     @happy_talk = HappyTalk.find(params[:id])
+  end
+
+  def require_login
+    unless logged_in?
+      flash[:error] = "You must be logged in"
+      redirect_to new_user_path
+    end
   end
 end
