@@ -2,6 +2,7 @@ class HappyTalksController < ApplicationController
 
   before_action :set_happy_talk, only: [:show, :edit, :update, :destroy]
   before_action :require_login, only: [:new, :edit, :show, :destroy]
+  before_action :set_user, only: [:destroy, :edit]
 
   def index
     @happy_talks = HappyTalk.all.order("id DESC")
@@ -67,5 +68,9 @@ class HappyTalksController < ApplicationController
       flash[:error] = "You must be logged in"
       redirect_to new_user_path
     end
+  end
+
+  def set_user
+     redirect_to happy_talks_path unless @happy_talk.user_id == current_user.id
   end
 end

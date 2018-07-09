@@ -2,6 +2,10 @@
   float:left;
 }
 
+.btn-default{
+  color: #1E00FF;
+}
+
 .navbar-default{
   background-color: white;
   border-color: transparent;
@@ -19,6 +23,13 @@
 }
 
 .fa-sign-in-alt:before {
+  background-image: linear-gradient(#05FBFF, #1E00FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  vertical-align: middle;
+}
+
+.fa-sign-out-alt:before {
   background-image: linear-gradient(#05FBFF, #1E00FF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

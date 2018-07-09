@@ -3,19 +3,22 @@
 <p><%= notice %></p>
 
 <div id="new-happy-talk-link">
-  <%= link_to 'Make your happy', new_happy_talk_path, class: "btn btn-default"  %><br>
+  <%= link_to 'Make your happy', new_happy_talk_path, class: "btn btn-default"  %>
   <%= link_to 'HOME', root_path, class: "btn btn-default" %>
+  <%= link_to 'Your favorites', favorites_path, class: "btn btn-default" %>
 </div>
 
 <% @happy_talks.each do |happy_talk| %>
-<div class="row">
-  <div class="col-xs-6 col-xs-push-3 happy-talk-panel" >
-    <p class= "balloon4 line_break"><%= happy_talk.content %></p>
-    <div class="happy-talk-links">
-      <%= link_to 'Verify the contents', happy_talk_path(happy_talk.id), class: "btn btn-default" %>
-      <%= link_to 'Edit happy talk', edit_happy_talk_path(happy_talk.id), class: "btn btn-default" %>
-      <%= link_to 'Delete happy talk', happy_talk_path(happy_talk.id), method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-default" %>
-    </div>
+  <div class="row">
+    <div class="col-xs-6 col-xs-push-3 happy-talk-panel" >
+      <p class= "balloon4 line_break"><%= happy_talk.content %></p>
+        <div class="happy-talk-links">
+          <%= link_to 'Verify the contents', happy_talk_path(happy_talk.id), class: "btn btn-default" %>
+            <% if happy_talk.user_id == current_user.id %>
+              <%= link_to 'Edit happy talk', edit_happy_talk_path(happy_talk.id), class: "btn btn-default" %>
+              <%= link_to 'Delete happy talk', happy_talk_path(happy_talk.id), method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-default" %>
+            <% end %>
+         </div>
+     </div>
   </div>
-</div>
 <% end %>
