@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show]
   resources :favorites, only: [:create, :destroy, :index]
 
+  mount LetterOpenerWeb::Engine, at: "/inbox" if Rails.env.development?
+  resources :contacts
+  
   resources :happy_talks do
     collection do
       post :confirm
