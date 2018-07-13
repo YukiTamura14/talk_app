@@ -46,9 +46,12 @@
 
     <section class="function" "container-fluid">
       <div class="function-images" "row" "function-image-color" >
-        <a href = "#" class="col-md-4 col-sm-12" ><i class="far fa-envelope fa-fw icon" ></i>
-          <p>Mail</p>
-        </a>
+        <%= link_to new_contact_path do  %>
+          <div class="col-md-4 col-sm-12" >
+            <i class="far fa-envelope fa-fw icon" ></i>
+            <p>Contact</p>
+          </div>
+          <% end %>
 
         <% if logged_in? %>
           <%= link_to session_path(current_user.id,'logout'), method: :delete do %>
