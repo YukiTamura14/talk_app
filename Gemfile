@@ -25,7 +25,7 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem 'letter_opener_web'
-  gem 'carrierwave'
+  gem 'carrierwave', '~> 1.0'
   gem 'mini_magick'
 end
 
