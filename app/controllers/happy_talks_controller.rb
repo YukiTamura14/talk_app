@@ -25,8 +25,6 @@ class HappyTalksController < ApplicationController
       redirect_to happy_talks_path, notice: 'Happy Talk was successfully created.'
     else
       render :new
-      # format.html { render :new }
-      # redirect_to new_happy_talk_path, notice: "happy talkを作成しました"
     end
   end
 
