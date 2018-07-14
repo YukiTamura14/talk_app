@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
   <strong>Name:</strong>
   <%= @contact.name %>
@@ -15,5 +16,5 @@
   <%= @contact.content %>
 </p>
 
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+<%= link_to 'TOPへ', root_path, class: "btn btn-default" %>
+<%= link_to 'お問い合わせフォームへ', new_contact_path, class: "btn btn-default" %>

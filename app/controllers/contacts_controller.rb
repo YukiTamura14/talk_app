@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-  before_action :set_contact, only: [:show, :edit, :update, :destroy]
+  before_action :set_contact, only: [:show, :update, :destroy]
 
   def index
     @contacts = Contact.all
@@ -21,7 +21,7 @@ class ContactsController < ApplicationController
      respond_to do |format|
        if @contact.save
          ContactMailer.contact_mail(@contact).deliver
-         format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
+         format.html { redirect_to @contact, notice: 'Contact was successfully created.'}
          format.json { render :show, status: :created, location: @contact }
        else
          format.html { render :new }

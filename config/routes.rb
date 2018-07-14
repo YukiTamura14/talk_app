@@ -13,4 +13,10 @@ Rails.application.routes.draw do
       post :confirm
     end
   end
+
+  resources :feeds do
+    collection do
+      post :confirm
+     end
+   end
 end

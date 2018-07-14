@@ -27,6 +27,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit data: { confirm: 'この内容で問い合わせますか?' }, class: "btn btn-default" %>
   </div>
 <% end %>
