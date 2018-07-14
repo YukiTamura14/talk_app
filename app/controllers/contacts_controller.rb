@@ -20,7 +20,7 @@ class ContactsController < ApplicationController
 
      respond_to do |format|
        if @contact.save
-         ContactMailer.contact_mail(@contact).deliver
+         ContactMailer.contact_mail(@contact).deliver_now
          format.html { redirect_to @contact, notice: 'Contact was successfully created.'}
          format.json { render :show, status: :created, location: @contact }
        else

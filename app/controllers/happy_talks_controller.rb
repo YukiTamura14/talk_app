@@ -21,7 +21,7 @@ class HappyTalksController < ApplicationController
     @happy_talk.user_id = current_user.id
     # @happy_talk = current_user.happy_talks.build(happy_talk_params)
     if @happy_talk.save
-      HappytalkMailer.happytalk_mail(@happy_talk).deliver
+      HappytalkMailer.happytalk_mail(@happy_talk).deliver_now
       redirect_to happy_talks_path, notice: 'Happy Talk was successfully created.'
     else
       render :new
