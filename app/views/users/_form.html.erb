@@ -23,30 +23,33 @@
   </div>
 <% end %>
 
-<table>
-  <tr>
-    <th><%= f.label :name %></th>
-    <td><%= f.text_field :name %></td>
-  </tr>
-  <tr>
-    <th><%= f.label :email %></th>
-    <td><%= f.email_field :email %></td>
-  </tr>
-  <tr>
-    <th><%= f.label :password %></th>
-    <td><%= f.password_field :password %></td>
-  </tr>
-  <tr>
-    <th><%= f.label :password_confirmation %></th>
-    <td><%= f.password_field :password_confirmation %></td>
-  </tr>
-  <tr>
+<div class="row">
+  <div class= "col-xs-6 col-xs-push-3">
+    <table>
+      <tr>
+        <th><%= f.label :name %></th>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :email %></th>
+        <td><%= f.email_field :email %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :password %></th>
+        <td><%= f.password_field :password %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :password_confirmation %></th>
+        <td><%= f.password_field :password_confirmation %></td>
+      </tr>
+    <tr>
     <th><%=f.label :image %></th>
-    <%= image_tag(@user.image.url) if @user.image.url.present? %>
-    <td><%= f.file_field :image, id: :user_image %></td>
-  </tr>
-</table>
-  <%= link_to 'Back', new_user_path %>
+      <%= image_tag(@user.image.url) if @user.image.url.present? %>
+      <td><%= f.file_field :image, id: :user_image %></td>
+    </tr>
+  </table>
+  </div>
+  <%= link_to 'Back', new_user_path, class: "btn btn-default" %>
 
   <%= f.submit "Create my account", class: "btn btn-default" %>
 <% end %>
