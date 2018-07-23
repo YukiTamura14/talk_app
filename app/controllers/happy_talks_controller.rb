@@ -57,7 +57,7 @@ class HappyTalksController < ApplicationController
 
   private
   def happy_talk_params
-    params.require(:happy_talk).permit(:content)
+    params.require(:happy_talk).permit(:content, :image, :image_cache)
   end
 
   def set_happy_talk

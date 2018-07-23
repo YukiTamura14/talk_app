@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_13_141937) do
+ActiveRecord::Schema.define(version: 2018_07_23_052535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,17 +30,12 @@ ActiveRecord::Schema.define(version: 2018_07_13_141937) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "feeds", force: :cascade do |t|
-    t.text "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "happy_talks", force: :cascade do |t|
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.string "image"
     t.index ["user_id"], name: "index_happy_talks_on_user_id"
   end
 
@@ -51,6 +46,7 @@ ActiveRecord::Schema.define(version: 2018_07_13_141937) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "happy_talk_id"
+    t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["happy_talk_id"], name: "index_users_on_happy_talk_id"
   end

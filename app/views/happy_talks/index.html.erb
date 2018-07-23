@@ -11,7 +11,7 @@
 <% @happy_talks.each do |happy_talk| %>
   <div class="row">
     <div class="col-xs-6 col-xs-push-3 happy-talk-panel" >
-      <p class= "balloon4 line_break"><%= happy_talk.content %></p>
+      <p class= "balloon4 line_break"><%= happy_talk.content %><br><%= image_tag(happy_talk.image.url) if happy_talk.image.url.present? %></p>
         <div class="happy-talk-links">
           <%= link_to 'Verify the contents', happy_talk_path(happy_talk.id), class: "btn btn-default" %>
             <% if happy_talk.user_id == current_user.id %>

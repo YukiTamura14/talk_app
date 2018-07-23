@@ -15,10 +15,14 @@
     <div class= "col-xs-6 col-xs-push-3">
       <%= form.label :content, class: "control-label" %>
       <%= form.text_field :content, class: "form-control" %>
-     <p class="help-block">※140文字以内で入力してください。</p>
+      <%= form.label :image %>
+      <%= form.file_field :image, id: :happy_talk_image %>
+
+      <p class="help-block">※140文字以内で入力してください。</p>
     </div>
   </div>
 </div>
 <%= form.submit "Share your Happy", class: "btn btn-default" %>
 <% end %>
+
 <%= link_to "Happy Talk Lists", happy_talks_path, class: "btn btn-default" %>
