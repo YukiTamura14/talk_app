@@ -42,14 +42,13 @@
         <th><%= f.label :password_confirmation %></th>
         <td><%= f.password_field :password_confirmation %></td>
       </tr>
-    <tr>
-    <th><%=f.label :image %></th>
-      <%= image_tag(@user.image.url) if @user.image.url.present? %>
-      <td><%= f.file_field :image, id: :user_image %></td>
-    </tr>
-  </table>
+      <tr>
+        <th><%=f.label :image %></th>
+        <%= image_tag(@user.image.url) if @user.image.url.present? %>
+        <td><%= f.file_field :image, id: :user_image %></td>
+      </tr>
+    </table>
+    <%= link_to 'Back', new_user_path, class: "btn btn-default" %>
+    <%= f.submit "Create my account", class: "btn btn-default" %>
   </div>
-  <%= link_to 'Back', new_user_path, class: "btn btn-default" %>
-
-  <%= f.submit "Create my account", class: "btn btn-default" %>
 <% end %>
