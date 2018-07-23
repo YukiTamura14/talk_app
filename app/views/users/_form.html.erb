@@ -28,19 +28,19 @@
     <table>
       <tr>
         <th><%= f.label :name %></th>
-        <td><%= f.text_field :name %></td>
+        <td><%= f.text_field :name, class: "form-control" %></td>
       </tr>
       <tr>
         <th><%= f.label :email %></th>
-        <td><%= f.email_field :email %></td>
+        <td><%= f.email_field :email, class: "form-control" %></td>
       </tr>
       <tr>
         <th><%= f.label :password %></th>
-        <td><%= f.password_field :password %></td>
+        <td><%= f.password_field :password, class: "form-control" %></td>
       </tr>
       <tr>
         <th><%= f.label :password_confirmation %></th>
-        <td><%= f.password_field :password_confirmation %></td>
+        <td><%= f.password_field :password_confirmation, class: "form-control" %></td>
       </tr>
       <tr>
         <th><%=f.label :image %></th>
@@ -48,7 +48,9 @@
         <td><%= f.file_field :image, id: :user_image %></td>
       </tr>
     </table>
-    <%= link_to 'Back', new_user_path, class: "btn btn-default" %>
-    <%= f.submit "Create my account", class: "btn btn-default" %>
+    <div class= "new_user_btn">
+      <%= link_to 'Back', new_user_path, class: "btn btn-default" %>
+      <%= f.submit "Create my account", class: "btn btn-default" %>
+    </div>
   </div>
 <% end %>
