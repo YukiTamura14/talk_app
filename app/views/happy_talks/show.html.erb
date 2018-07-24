@@ -1,13 +1,13 @@
 <h2>Content</h2>
 <p>content: <%= @happy_talk.content %></p>
-<%= image_tag @happy_talk.image if @happy_talk.image.present? %>
+<%= image_tag  (@happy_talk.image.url) if @happy_talk.image.url.present? %>
 
 <% unless @happy_talk.user == current_user %>
   <% if @favorite.present? %>
-    <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id, happy_talk_id: @happy_talk.id), method: :delete, class: 'btn btn-danger' %>
+    <p><%= link_to "お気に入り解除する", favorite_path(id: @favorite.id, happy_talk_id: @happy_talk.id), method: :delete, class: 'btn btn-danger' %></p>
   <% else %>
-    <%= link_to 'お気に入りする', favorites_path(happy_talk_id: @happy_talk.id), method: :post, class: 'btn btn-primary' %>
+    <p><%= link_to "お気に入りする", favorites_path(happy_talk_id: @happy_talk.id), method: :post, class: "btn btn-primary" %></p>
   <% end %>
 <% end %>
 
-<%= link_to 'Back', happy_talks_path, class: "btn btn-default"%>
+<%= link_to "Back", happy_talks_path, class: "btn btn-default"%>

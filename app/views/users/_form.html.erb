@@ -44,12 +44,11 @@
       </tr>
       <tr>
         <th><%=f.label :image %></th>
-        <%= image_tag(@user.image.url) if @user.image.url.present? %>
         <td><%= f.file_field :image, id: :user_image %></td>
       </tr>
     </table>
     <div class= "new_user_btn">
-      <%= link_to 'Back', new_user_path, class: "btn btn-default" %>
+      <%= link_to "Back", new_user_path, class: "btn btn-default" %>
       <%= f.submit "Create my account", class: "btn btn-default" %>
     </div>
   </div>

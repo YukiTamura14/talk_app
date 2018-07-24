@@ -1,12 +1,12 @@
-<%= link_to 'Make your happy', new_happy_talk_path, class: "btn btn-default"  %>
-<%= link_to 'HOME', root_path, class: "btn btn-default" %>
+<%= link_to "Make your happy", new_happy_talk_path, class: "btn btn-default"  %>
+<%= link_to "HOME", root_path, class: "btn btn-default" %>
 <%= link_to "Happy Talk Lists",happy_talks_path, class: "btn btn-default" %>
 
 <% @favorite_happy_talks.each do |talk| %>
   <div class="row">
     <div class="col-xs-6 col-xs-push-3 happy-talk-panel" >
-      <p class= "balloon4 line_break"><%= talk.user.name %><br><%= talk.happy_talk.content %></p>
-      <%= link_to 'Good Bye! My Favorite!', favorite_path(id: talk.id), method: :delete, class: "btn btn-info" %>
+      <p class= "balloon4 line_break"><%= talk.user.name %><br><%= talk.happy_talk.content %><br><%= image_tag(talk.happy_talk.image.url) if talk.happy_talk.image.url.present? %></p>
+      <%= link_to "Good Bye! My Favorite!", favorite_path(id: talk.id), method: :delete, class: "btn btn-info" %>
     </div>
   </div>
 <% end %>

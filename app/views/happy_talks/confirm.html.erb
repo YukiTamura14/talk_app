@@ -8,8 +8,8 @@
   <%=form.submit "Share", class: "btn btn-default"%>
 <% end %>
 
-<%= form_with(model: @happy_talk, url: new_happy_talk_path, local: true, method: 'get') do |form| %>
+<%= form_with(model: @happy_talk, url: new_happy_talk_path, local: true, method: "get") do |form| %>
   <%= form.hidden_field :content %>
   <%= form.hidden_field :image_cache if @happy_talk.image.url %>
-  <%= form.submit 'Back', name: 'back', class: "btn btn-default"%>
+  <%= form.submit "Back", name: "back", class: "btn btn-default" %>
 <% end %>
